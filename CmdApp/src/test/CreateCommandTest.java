@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class CreateCommandTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void CanInstantiateCreateCommand() {
+		CreateCommand command = new CreateCommand();
 	}
 
 }

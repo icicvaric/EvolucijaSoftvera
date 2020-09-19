@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class DeleteCommandTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void CanInstantiateDeleteCommand() {
+		DeleteCommand command = new DeleteCommand();
 	}
 
 }
