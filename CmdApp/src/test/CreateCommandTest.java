@@ -4,11 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import cmd.CreateCommand;
+
 class CreateCommandTest {
 
 	@Test
 	void CanInstantiateCreateCommand() {
-		CreateCommand command = new CreateCommand();
+		CreateCommand createCommand = new CreateCommand();
+		assertNotNull(createCommand);
 	}
 
 }

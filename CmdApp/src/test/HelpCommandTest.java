@@ -4,11 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import cmd.HelpCommand;
+
 class HelpCommandTest {
 
 	@Test
 	void CanInstantiateHelpCommand() {
-		HelpCommand command = new HelpCommand();
+		HelpCommand helpCommand = new HelpCommand();
+		assertNotNull(helpCommand);
 	}
 
 }
