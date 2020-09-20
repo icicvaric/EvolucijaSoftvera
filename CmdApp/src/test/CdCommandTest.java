@@ -1,11 +1,8 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
 import cmd.CdCommand;
-import cmd.Command;
 
 class CdCommandTest {
 
@@ -13,6 +10,11 @@ class CdCommandTest {
 	void CanInstantiateCdCommand() {
 		CdCommand cdCommand = new CdCommand();
 		assertNotNull(cdCommand);
+	}
+	
+	@Test
+	void PerformCommandTest() {
+		
 	}
 
 }

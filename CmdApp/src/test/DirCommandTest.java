@@ -1,10 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import cmd.Command;
 import cmd.DirCommand;
 
 class DirCommandTest {
@@ -13,5 +10,10 @@ class DirCommandTest {
 	void CanInstantiateDirCommand() {
 		DirCommand dirCommand = new DirCommand();
 		assertNotNull( dirCommand );
+	}
+	
+	@Test
+	void PerformCommandTest() {
+		
 	}
 }

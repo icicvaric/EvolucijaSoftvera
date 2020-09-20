@@ -1,10 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import cmd.Command;
 import cmd.RenameCommand;
 
 class RenameCommandTest {
@@ -15,4 +12,8 @@ class RenameCommandTest {
 		assertNotNull(renameCommand);
 	}
 
+	@Test
+	void PerformCommandTest() {
+		
+	}
 }

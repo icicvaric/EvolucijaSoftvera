@@ -1,10 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import cmd.Command;
 import cmd.CompareCommand;
 
 class CompareCommandTest {
@@ -13,6 +10,11 @@ class CompareCommandTest {
 	void CanInstantiateCompareCommand() {
 		CompareCommand compareCommand = new CompareCommand();
 		assertNotNull(compareCommand);
+	}
+	
+	@Test
+	void PerformCommandTest() {
+		
 	}
 
 }

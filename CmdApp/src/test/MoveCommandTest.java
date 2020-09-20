@@ -1,10 +1,7 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
-import cmd.Command;
 import cmd.MoveCommand;
 
 class MoveCommandTest {
@@ -15,4 +12,8 @@ class MoveCommandTest {
 		assertNotNull( moveCommand );
 	}
 
+	@Test
+	void PerformCommandTest() {
+		
+	}
 }
