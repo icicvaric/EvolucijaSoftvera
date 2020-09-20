@@ -23,8 +23,13 @@ class CommandTest {
 		command = new String("help");
 		String[] parsedCommand =  Command.ParseCommand(command);
 		assertEquals(1, parsedCommand.length );
-		assertEquals("help", parsedCommand[0]);
+		assertEquals(command, parsedCommand[0]);
 		
+		command = new String("rename temp\\lib");
+		parsedCommand =  Command.ParseCommand(command);
+		assertEquals(2, parsedCommand.length );
+		assertEquals("rename", parsedCommand[0]);
+		assertEquals("temp\\lib", parsedCommand[1]);
 	}
 	
 	@Test
