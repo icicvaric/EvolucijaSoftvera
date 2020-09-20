@@ -29,5 +29,18 @@ class MainTest {
 		assertTrue(keySet.contains("move"));
 		assertTrue(keySet.contains("rename"));
 	}
+	
+	@Test
+	void IsInputValid() {
+		assertFalse( Main.IsInputValid(null));
+		assertFalse( Main.IsInputValid(new String()));
+		assertFalse( Main.IsInputValid(new String("   ")));
+		
+		Main.initCommandMap();
+		
+		assertFalse( Main.IsInputValid("assign"));
+		assertTrue( Main.IsInputValid("cd") );
+		assertTrue( Main.IsInputValid("cd newDir") );
+	}
 
 }

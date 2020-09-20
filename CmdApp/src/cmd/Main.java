@@ -1,13 +1,29 @@
 package cmd;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
 
 	public static Map<String, Command> commandMap = new HashMap<String, Command>();
 
-	public static void main(String[] args) {		
-
+	public static void main(String[] args) {	
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		initCommandMap();
+		
+		while(true)
+		{
+			System.out.print(System.getProperty("user.dir") + "> ");
+			try {
+				String option = reader.readLine();
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public static void initCommandMap()
