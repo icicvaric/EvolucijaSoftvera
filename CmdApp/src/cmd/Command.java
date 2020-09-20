@@ -12,7 +12,7 @@ public abstract class Command {
 		return result;
 	}
 
-	public static Object GetAbsoluthePath(Object object) {
+	public static String GetAbsoluthePath(String path) {
 		// TODO Auto-generated method stub
 		return null;
 	}
