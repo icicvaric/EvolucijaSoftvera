@@ -2,10 +2,9 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.IOException;
 import java.nio.file.*;
-
 import org.junit.jupiter.api.Test;
-
 import cmd.Command;
 
 class CommandTest {
@@ -35,7 +34,7 @@ class CommandTest {
 	}
 	
 	@Test
-	void GetAbsoluthePathTest() {
+	void GetAbsoluthePathTest() throws IOException {
 		
 		String path = null;		
 		assertNull(Command.GetAbsoluthePath(path));
@@ -63,6 +62,11 @@ class CommandTest {
 		absPath = Command.GetAbsoluthePath(path);
 		assertNotNull(absPath);
 		assertEquals(absolutePath.getParent().toString(), absPath);
+		
+		path = new String("temp");
+		absPath = Command.GetAbsoluthePath(path);
+		assertNotNull(absPath);
+		assertEquals(absolutePath.resolve(path).toString(), absPath);
 	}
-
+	
 }
