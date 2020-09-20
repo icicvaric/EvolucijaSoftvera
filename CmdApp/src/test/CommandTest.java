@@ -13,5 +13,17 @@ class CommandTest {
 		Command command = new Command();
 		assertNotNull(command);
 	}
+	
+	@Test
+	void ParseCommandTest() {
+		Command command = new Command();
+		assertNull(command.ParseCommand(null));
+	}
+	
+	@Test
+	void GetAbsoluthePathTest() {
+		Command command = new Command();
+		assertNull(command.GetAbsoluthePath(null));
+	}
 
 }
