@@ -6,11 +6,13 @@ import java.io.InputStreamReader;
 import java.util.*;
 import java.util.function.BooleanSupplier;
 
+import org.junit.jupiter.api.function.Executable;
+
 public class Main {
 
 	public static Map<String, Command> commandMap = new HashMap<String, Command>();
 
-	public static void main(String[] args) {	
+	public static void main(String[] args) throws Exception {	
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		initCommandMap();
@@ -20,7 +22,7 @@ public class Main {
 			System.out.print(System.getProperty("user.dir") + "> ");
 			try {
 				String option = reader.readLine();
-				
+				ExecuteCommand(option);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -49,6 +51,17 @@ public class Main {
 			return false;
 		
 		return true;
+	}
+
+	public static void ExecuteCommand(String option) throws Exception {
+		if(option == null)
+			throw new Exception("Input cannot be null");
+		
+		option = option.trim();
+		if (IsInputValid(option))
+		{
+			commandMap.get(option.split(" ")[0]).PerformCommand(option);
+		}
 	}
 
 }

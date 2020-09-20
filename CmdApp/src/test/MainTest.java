@@ -47,11 +47,14 @@ class MainTest {
 	
 	@Test
 	void ExecuteCommandTest() {
+		
+		assertThrows(IOException.class, () -> Main.ExecuteCommand(null));
+		
 		//valid pipeline
-		assertDoesNotThrow(Main.ExecuteCommand("help"));
+		assertDoesNotThrow(() -> Main.ExecuteCommand("help"));
 		
 		//invalid pipeline
-		assertThrows(IOException.class, Main.ExecuteCommand("help temp"));
+		assertThrows(IOException.class, () -> Main.ExecuteCommand("help temp"));
 	}
 
 }
