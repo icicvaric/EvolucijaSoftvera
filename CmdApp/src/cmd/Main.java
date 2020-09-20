@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.function.BooleanSupplier;
 
 public class Main {
 
@@ -37,6 +38,17 @@ public class Main {
 		commandMap.put("dir", new DirCommand());
 		commandMap.put("move", new MoveCommand());
 		commandMap.put("rename", new RenameCommand());
+	}
+
+	public static boolean IsInputValid(String option) {
+		if(option == null || option.isBlank() || option.isEmpty())
+			return false;
+		
+		String[] commands = option.split(" ");
+		if( !commandMap.keySet().contains(commands[0]))
+			return false;
+		
+		return true;
 	}
 
 }
