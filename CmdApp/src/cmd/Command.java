@@ -2,7 +2,7 @@ package cmd;
 
 public abstract class Command {
 
-	public static Object ParseCommand(Object object) {
+	public static String[] ParseCommand(String command) {
 		// TODO Auto-generated method stub
 		return null;
 	}
