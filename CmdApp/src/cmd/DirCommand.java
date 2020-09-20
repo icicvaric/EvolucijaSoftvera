@@ -1,5 +1,5 @@
 package cmd;
 
-public class DirCommand {
+public class DirCommand extends Command {
 
 }

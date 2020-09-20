@@ -1,5 +1,5 @@
 package cmd;
 
-public class RenameCommand {
+public class RenameCommand extends Command {
 
 }

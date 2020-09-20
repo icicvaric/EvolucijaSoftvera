@@ -1,5 +1,5 @@
 package cmd;
 
-public class CompareCommand {
+public class CompareCommand extends Command {
 
 }

@@ -1,10 +1,9 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Set;
-
 import org.junit.jupiter.api.Test;
+import cmd.Main;
 
 class MainTest {
 

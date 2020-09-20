@@ -1,5 +1,5 @@
 package cmd;
 
-public class MoveCommand {
+public class MoveCommand extends Command {
 
 }

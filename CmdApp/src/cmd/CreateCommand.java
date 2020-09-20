@@ -1,5 +1,5 @@
 package cmd;
 
-public class CreateCommand {
+public class CreateCommand extends Command {
 
 }

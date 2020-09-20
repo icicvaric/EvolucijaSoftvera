@@ -1,5 +1,5 @@
 package cmd;
 
-public class CopyCommand {
+public class CopyCommand extends Command {
 
 }
