@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import cmd.Command;
+
 class DirCommandTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+	void CanInstantiateDirCommand() {
+		DirCommand dirCommand = new DirCommand();
 
+	}
 }
