@@ -1,6 +1,8 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
 import java.util.Set;
 import org.junit.jupiter.api.Test;
 import cmd.Main;
@@ -41,6 +43,15 @@ class MainTest {
 		assertFalse( Main.IsInputValid("assign"));
 		assertTrue( Main.IsInputValid("cd") );
 		assertTrue( Main.IsInputValid("cd newDir") );
+	}
+	
+	@Test
+	void ExecuteCommandTest() {
+		//valid pipeline
+		assertDoesNotThrow(Main.ExecuteCommand("help"));
+		
+		//invalid pipeline
+		assertThrows(IOException.class, Main.ExecuteCommand("help temp"));
 	}
 
 }
