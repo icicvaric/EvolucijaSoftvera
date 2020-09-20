@@ -1,5 +1,7 @@
 package cmd;
 
+import java.nio.file.*;
+
 public abstract class Command {
 
 	public static String[] ParseCommand(String command) {
@@ -13,8 +15,24 @@ public abstract class Command {
 	}
 
 	public static String GetAbsoluthePath(String path) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if( path == null || path.isEmpty() || path.isBlank() )
+			return null;
+		
+		//we already have absolute path
+		if(path.contains(":\\"))
+			return path;
+		
+		String currentPath = System.getProperty("user.dir").toString();
+		Path absoluthPath = Paths.get(currentPath).toAbsolutePath();
+		
+		if(path.equals("."))
+			return absoluthPath.toString();
+		
+		if(path.equals(".."))
+			return absoluthPath.getParent().toString();
+		
+		return absoluthPath.resolve( path ).toString();
 	}
 
 }
