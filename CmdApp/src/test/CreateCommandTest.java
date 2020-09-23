@@ -18,14 +18,13 @@ class CreateCommandTest {
 	}
 	
 	@Test
-	void PerformCommandTest() throws IOException {
+	void PerformCommandTest() throws Exception {
 		CreateCommand createCommand = new CreateCommand();
 		
 		assertThrows(IOException.class, () -> createCommand.PerformCommand("  "));
 		assertThrows(IOException.class, () -> createCommand.PerformCommand("create"));
 		assertThrows(IOException.class, () -> createCommand.PerformCommand("create folder1 folder2"));
-		assertThrows(IOException.class, () -> createCommand.PerformCommand("create document.txt"));
-		
+
 		createCommand.PerformCommand("create " + HelperMethods.absPath);
 		assertTrue(Files.isDirectory(HelperMethods.absPath));
 		

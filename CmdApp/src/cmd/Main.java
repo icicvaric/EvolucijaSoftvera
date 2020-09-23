@@ -24,7 +24,7 @@ public class Main {
 				String option = reader.readLine();
 				ExecuteCommand(option);
 			} catch (IOException e) {
-				e.printStackTrace();
+				e.getMessage();
 			}
 		}
 	}
@@ -54,6 +54,7 @@ public class Main {
 	}
 
 	public static void ExecuteCommand(String option) throws Exception {
+		
 		if(option == null)
 			throw new Exception("Input cannot be null");
 		

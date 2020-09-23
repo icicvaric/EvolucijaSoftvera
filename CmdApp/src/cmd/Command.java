@@ -35,6 +35,6 @@ public abstract class Command {
 		return absoluthPath.resolve( path ).toString();
 	}
 	
-	public abstract void PerformCommand(String command);
+	public abstract void PerformCommand(String command) throws Exception;
 
 }
