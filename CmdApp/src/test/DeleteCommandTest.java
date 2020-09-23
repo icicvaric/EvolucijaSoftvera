@@ -35,9 +35,10 @@ class DeleteCommandTest {
 		assertFalse(Files.exists( HelperMethods.fileAbsPath));
 		
 		HelperMethods.CreateNonEmptyDirForTest();		
-		assertTrue(Files.exists( HelperMethods.fileAbsPath));
-		assertTrue(Files.exists( HelperMethods.fileAbsPath.resolve(HelperMethods.fileName) ) );
-		deleteCommand.PerformCommand("delete " + HelperMethods.fileAbsPath);
-		assertFalse(Files.exists( HelperMethods.fileAbsPath));
+		assertTrue(Files.exists( HelperMethods.absPath));
+		assertTrue(Files.exists( HelperMethods.absPath.resolve(HelperMethods.fileName) ) );
+		deleteCommand.PerformCommand("delete " + HelperMethods.absPath);
+		assertFalse(Files.exists( HelperMethods.absPath));
+		assertFalse(Files.exists( HelperMethods.absPath.resolve(HelperMethods.fileName) ) );
 	}
 }
