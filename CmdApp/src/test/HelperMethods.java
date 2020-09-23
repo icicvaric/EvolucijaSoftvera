@@ -1,13 +1,13 @@
 package test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 
 public class HelperMethods {
 	
 	public static String fileName = "file.txt";
-	public static Path absPath = Paths.get(System.getProperty("user.dir").toString()).toAbsolutePath().resolve("temp");
+	public static String folderName = "temp";
+	public static Path absPath = Paths.get(System.getProperty("user.dir").toString()).toAbsolutePath().resolve(folderName);
 	public static Path fileAbsPath = Paths.get(System.getProperty("user.dir").toString()).toAbsolutePath().resolve(fileName);
 
 	public static void CreateDirForTest() throws IOException
@@ -34,7 +34,6 @@ public class HelperMethods {
 	{
 		Files.createDirectory(absPath);
 		Files.createFile(absPath.resolve(fileName));
-	//	new File( absPath.toString() + File.pathSeparator + fileName);
 	}
 
 }
