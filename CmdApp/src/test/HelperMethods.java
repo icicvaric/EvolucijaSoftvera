@@ -20,20 +20,21 @@ public class HelperMethods {
 		Files.delete(absPath);
 	}
 	
-	public static void CreateFileForTest() 
+	public static void CreateFileForTest() throws IOException 
 	{
-		new File(fileAbsPath.toString());
+		Files.createFile(fileAbsPath);
 	}
 	
-	public static void DeleteFileForTest()
+	public static void DeleteFileForTest() throws IOException
 	{
-		new File(fileAbsPath.toString()).delete();
+		Files.delete(fileAbsPath);
 	}
 	
 	public static void CreateNonEmptyDirForTest() throws IOException
 	{
 		Files.createDirectory(absPath);
-		new File( absPath.toString() + File.pathSeparator + fileName);
+		Files.createFile(absPath.resolve(fileName));
+	//	new File( absPath.toString() + File.pathSeparator + fileName);
 	}
 
 }
