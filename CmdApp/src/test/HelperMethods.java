@@ -5,7 +5,7 @@ import java.nio.file.*;
 
 public class HelperMethods {
 	
-	private static Path absPath = Paths.get(System.getProperty("user.dir").toString()).toAbsolutePath().resolve("temp");
+	public static Path absPath = Paths.get(System.getProperty("user.dir").toString()).toAbsolutePath().resolve("temp");
 	
 	public static void CreateDirForTest() throws IOException
 	{
