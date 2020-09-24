@@ -22,6 +22,8 @@ class DirCommandTest {
 		assertThrows(IOException.class, () -> dirCommand.PerformCommand("  "));
 		assertThrows(IOException.class, () -> dirCommand.PerformCommand("dir"));
 		assertThrows(IOException.class, () -> dirCommand.PerformCommand("dir folder1 folder2"));
+		
+		assertDoesNotThrow( () -> dirCommand.PerformCommand("dir ."));
 	}
 	
 	@Test
@@ -38,5 +40,10 @@ class DirCommandTest {
 		fileNames = dirCommand.GetFileNamesTest("dir temp");
 		assertEquals("", fileNames);
 		HelperMethods.DeleteDirForTest();
+		
+		HelperMethods.CreateFileForTest();
+		fileNames = dirCommand.GetFileNamesTest("dir " + HelperMethods.fileName);
+		assertEquals("", fileNames);
+		HelperMethods.DeleteFileForTest();
 	}
 }
