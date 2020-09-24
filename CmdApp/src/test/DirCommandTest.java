@@ -31,17 +31,17 @@ class DirCommandTest {
 		DirCommand dirCommand = new DirCommand();
 		
 		HelperMethods.CreateNonEmptyDirForTest();
-		String fileNames = dirCommand.GetFileNamesTest("dir temp");
+		String fileNames = dirCommand.GetFileNamesTest("temp");
 		assertEquals(HelperMethods.fileName + System.lineSeparator(), fileNames);
-		HelperMethods.DeleteDirForTest();
+		HelperMethods.DeleteNonEmptyDirForTest();
 		
 		HelperMethods.CreateDirForTest();
-		fileNames = dirCommand.GetFileNamesTest("dir temp");
+		fileNames = dirCommand.GetFileNamesTest("temp");
 		assertEquals("", fileNames);
 		HelperMethods.DeleteDirForTest();
 		
 		HelperMethods.CreateFileForTest();
-		fileNames = dirCommand.GetFileNamesTest("dir " + HelperMethods.fileName);
+		fileNames = dirCommand.GetFileNamesTest(HelperMethods.fileName);
 		assertEquals("", fileNames);
 		HelperMethods.DeleteFileForTest();
 	}

@@ -3,6 +3,8 @@ package test;
 import java.io.IOException;
 import java.nio.file.*;
 
+import org.apache.commons.io.FileUtils;
+
 public class HelperMethods {
 	
 	public static String fileName = "file.txt";
@@ -34,6 +36,11 @@ public class HelperMethods {
 	{
 		Files.createDirectory(absPath);
 		Files.createFile(absPath.resolve(fileName));
+	}
+	
+	public static void DeleteNonEmptyDirForTest() throws IOException
+	{
+		FileUtils.deleteDirectory(absPath.toFile());
 	}
 
 }
