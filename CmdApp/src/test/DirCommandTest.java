@@ -3,7 +3,6 @@ package test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import org.junit.jupiter.api.Test;
 import cmd.DirCommand;
 
@@ -27,13 +26,13 @@ class DirCommandTest {
 	}
 	
 	@Test
-	void GetFileNamesTest()
+	void GetFileNamesTest() throws IOException
 	{
 		DirCommand dirCommand = new DirCommand();
 		
 		HelperMethods.CreateNonEmptyDirForTest();
 		String fileNames = dirCommand.GetFileNamesTest("dir temp");
-		assertEquals(HelperMethods.fileName, fileNames);
+		assertEquals(HelperMethods.fileName + System.lineSeparator(), fileNames);
 		HelperMethods.DeleteDirForTest();
 		
 		HelperMethods.CreateDirForTest();
