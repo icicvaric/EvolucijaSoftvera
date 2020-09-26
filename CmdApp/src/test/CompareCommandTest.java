@@ -4,12 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-
-import org.graalvm.compiler.nodes.spi.SwitchFoldable.Helper;
 import org.junit.jupiter.api.Test;
 import cmd.CompareCommand;
-import cmd.MoveCommand;
 
 class CompareCommandTest {
 
@@ -20,7 +16,7 @@ class CompareCommandTest {
 	}
 	
 	@Test
-	void PerformCommandTest() {
+	void PerformCommandTest() throws IOException {
 		CompareCommand compareCommand = new CompareCommand();
 		
 		assertThrows(IOException.class, () -> compareCommand.PerformCommand("  "));
@@ -38,7 +34,7 @@ class CompareCommandTest {
 		
 		HelperMethods.CreateDirForTest(HelperMethods.absPath1);
 		
-		String difference = compareCommand.GetDifference(new File(HelperMethods.absPath.toString()), new File(HelperMethods.absPath1.toString()));
+		String difference = compareCommand.GetDifference(new File(HelperMethods.absPath.toString()), new File(HelperMethods.absPath1.toString())).trim();
 		assertTrue(difference != null);
 		assertTrue(!difference.isEmpty());
 		assertTrue(!difference.isBlank());
