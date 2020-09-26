@@ -35,7 +35,9 @@ class MoveCommandTest {
 		assertThrows(IOException.class, () -> moveCommand.PerformCommand("move " + HelperMethods.folderName + " " + HelperMethods.fileName));	
 		// we cannot move folder that doesn't exist
 		assertThrows(IOException.class, () -> moveCommand.PerformCommand("move " + "FolderThatDoesntExist" + " " + HelperMethods.folderName));
-		
+		// we cannot move current working directory
+		assertThrows(IOException.class, () -> moveCommand.PerformCommand("move " + System.getProperty("user.dir") + " " + HelperMethods.folderName));
+				
 		HelperMethods.CreateDirForTest(HelperMethods.absPath1);
 		moveCommand.PerformCommand("move " + HelperMethods.folderName1 + " " + HelperMethods.folderName);
 		// check if folder is deleted from old location
