@@ -45,5 +45,6 @@ class CopyCommandTest {
 		
 		HelperMethods.DeleteNonEmptyDirForTest();
 		HelperMethods.DeleteFileForTest();
+		HelperMethods.DeleteDirForTest(HelperMethods.absPath1);
 	}
 }
