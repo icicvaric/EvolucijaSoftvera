@@ -44,14 +44,14 @@ public class CompareCommand extends Command {
 		for(String name: set2)
 		{
 			if(!set1.contains(name))
-				result.append(name); result.append(System.lineSeparator());		
+				result.append(name + System.lineSeparator());
 		}
 		
 		set1.removeAll(set2);	
 		
 		for(String fileName : set1)
 		{
-			result.append(fileName); result.append(System.lineSeparator());
+			result.append(fileName + System.lineSeparator());
 		}
 		
 		return result.toString();
