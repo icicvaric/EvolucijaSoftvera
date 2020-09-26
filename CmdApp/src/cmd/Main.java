@@ -4,15 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.function.BooleanSupplier;
-
-import org.junit.jupiter.api.function.Executable;
 
 public class Main {
 
 	public static Map<String, Command> commandMap = new HashMap<String, Command>();
 
-	public static void main(String[] args) throws Exception {	
+	public static void main(String[] args) {	
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		initCommandMap();
@@ -24,7 +21,10 @@ public class Main {
 				String option = reader.readLine();
 				ExecuteCommand(option);
 			} catch (IOException e) {
-				e.getMessage();
+				System.out.println(e.getMessage());
+			} catch( Exception e )
+			{
+				System.out.println(e.getMessage());
 			}
 		}
 	}
