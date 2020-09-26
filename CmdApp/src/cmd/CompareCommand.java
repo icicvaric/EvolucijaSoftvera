@@ -39,16 +39,17 @@ public class CompareCommand extends Command {
 			set2.add(file.getName());
 		}
 		
-		set1.removeAll(set2);
-		
 		StringBuilder result = new StringBuilder();
 		
-		for(String fileName : set1)
+		for(String name: set2)
 		{
-			result.append(fileName); result.append(System.lineSeparator());
+			if(!set1.contains(name))
+				result.append(name); result.append(System.lineSeparator());		
 		}
 		
-		for(String fileName : set2)
+		set1.removeAll(set2);	
+		
+		for(String fileName : set1)
 		{
 			result.append(fileName); result.append(System.lineSeparator());
 		}
