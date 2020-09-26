@@ -48,7 +48,7 @@ class MainTest {
 	@Test
 	void ExecuteCommandTest() {
 		
-		assertThrows(IOException.class, () -> Main.ExecuteCommand(null));
+		assertThrows(Exception.class, () -> Main.ExecuteCommand(null));
 		
 		//valid pipeline
 		assertDoesNotThrow(() -> Main.ExecuteCommand("help"));

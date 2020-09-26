@@ -53,7 +53,7 @@ public class Main {
 		return true;
 	}
 
-	public static void ExecuteCommand(String option) throws Exception {
+	public static void ExecuteCommand(String option) throws Exception{
 		
 		if(option == null)
 			throw new Exception("Input cannot be null");
