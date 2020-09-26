@@ -50,9 +50,20 @@ public class HelperMethods {
 		Files.createFile(absPath.resolve(fileName));
 	}
 	
+	public static void CreateNonEmptyDirForTest(Path path) throws IOException
+	{
+		Files.createDirectory(path);
+		Files.createFile(path.resolve(fileName));
+	}
+	
 	public static void DeleteNonEmptyDirForTest() throws IOException
 	{
 		FileUtils.deleteDirectory(absPath.toFile());
+	}
+	
+	public static void DeleteNonEmptyDirForTest(Path path) throws IOException
+	{
+		FileUtils.deleteDirectory(path.toFile());
 	}
 
 }

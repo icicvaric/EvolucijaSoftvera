@@ -40,8 +40,15 @@ class CompareCommandTest {
 		assertTrue(!difference.isBlank());
 		assertEquals(HelperMethods.fileName, difference);
 	
-		HelperMethods.DeleteNonEmptyDirForTest();
 		HelperMethods.DeleteDirForTest(HelperMethods.absPath1);
+		
+		HelperMethods.CreateNonEmptyDirForTest(HelperMethods.absPath1);
+		
+		difference = compareCommand.GetDifference(new File(HelperMethods.absPath.toString()), new File(HelperMethods.absPath1.toString())).trim();
+		assertTrue(difference != null);
+		assertTrue(difference.isEmpty());
+		
+		HelperMethods.DeleteNonEmptyDirForTest();
+		HelperMethods.DeleteNonEmptyDirForTest(HelperMethods.absPath1);
 	}
-
 }
