@@ -2,6 +2,8 @@ package cmd;
 
 import java.io.IOException;
 
+import com.google.java.contract.Ensures;
+
 public class HelpCommand extends Command {
 
 	@Override
@@ -14,6 +16,7 @@ public class HelpCommand extends Command {
 		System.out.print(GetCommandDetails());
 	}
 	
+	@Ensures({"result != null", "!result.isEmpty()", "!result.isBlank()"})
 	public String GetCommandDetails()
 	{
 		StringBuilder manual = new StringBuilder();

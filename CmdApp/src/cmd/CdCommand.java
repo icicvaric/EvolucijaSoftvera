@@ -20,5 +20,4 @@ public class CdCommand extends Command {
 		
 		System.setProperty("user.dir", absPath);
 	}
-
 }

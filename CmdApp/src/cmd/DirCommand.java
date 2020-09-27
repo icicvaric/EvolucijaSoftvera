@@ -3,6 +3,9 @@ package cmd;
 import java.io.File;
 import java.io.IOException;
 
+import com.google.java.contract.Ensures;
+import com.google.java.contract.Requires;
+
 public class DirCommand extends Command {
 
 	@Override
@@ -16,6 +19,8 @@ public class DirCommand extends Command {
 		System.out.println(GetFileNamesTest(parsedCommand[1]));
 	}
 	
+	@Requires({"name != null", "!name.isEmpty()", "!name.isBlank()"})
+	@Ensures("result != null")
 	public String GetFileNamesTest(String name)
 	{
 		String absPath = GetAbsoluthePath(name);		

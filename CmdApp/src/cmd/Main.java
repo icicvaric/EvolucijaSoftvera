@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+import com.google.java.contract.Ensures;
+import com.google.java.contract.Invariant;
+import com.google.java.contract.Requires;
+import com.google.java.contract.ThrowEnsures;
+
+@Invariant("commandMap != null")
 public class Main {
 
 	public static Map<String, Command> commandMap = new HashMap<String, Command>();
@@ -29,6 +35,7 @@ public class Main {
 		}
 	}
 	
+	@Ensures("!commandMap.isEmpty()")
 	public static void initCommandMap()
 	{	
 		commandMap.put("cd", new CdCommand());
@@ -42,6 +49,7 @@ public class Main {
 		commandMap.put("rename", new RenameCommand());
 	}
 
+	@Requires({"option != null", "!option.isEmpty()", "!option.isBlank()"})
 	public static boolean IsInputValid(String option) {
 		if(option == null || option.isBlank() || option.isEmpty())
 			return false;
@@ -53,6 +61,8 @@ public class Main {
 		return true;
 	}
 
+	@ThrowEnsures("option == null")
+	@Requires({"!option.isEmpty()", "!option.isBlank()"})
 	public static void ExecuteCommand(String option) throws Exception{
 		
 		if(option == null)

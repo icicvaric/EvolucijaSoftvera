@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 
+import com.google.java.contract.Ensures;
+import com.google.java.contract.Requires;
+
 public class CompareCommand extends Command {
 
 	@Override
@@ -24,6 +27,8 @@ public class CompareCommand extends Command {
 		System.out.println( GetDifference(directory1, directory2) );
 	}
 	
+	@Requires({"directory1 != null", "directory2 != null"})
+	@Ensures("result != null")
 	public String GetDifference( File directory1, File directory2 )
 	{
 		File[] listFiles1 = directory1.listFiles();
